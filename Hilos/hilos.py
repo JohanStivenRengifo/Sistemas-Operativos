@@ -15,17 +15,11 @@ def numeros_primos(inicio, fin):
 def main():
     inicio_tiempo = time.time()
 
-    hilo1 = threading.Thread(target=numeros_primos, args=(1, 33333))
-    hilo2 = threading.Thread(target=numeros_primos, args=(33333, 66666))
-    hilo3 = threading.Thread(target=numeros_primos, args=(66666, 100000))
+    hilo1 = threading.Thread(target=numeros_primos, args=(1, 100000))
 
     hilo1.start()
-    hilo2.start()
-    hilo3.start()
 
     hilo1.join()
-    hilo2.join()
-    hilo3.join()
 
     fin_tiempo = time.time()
     print("Tiempo:", fin_tiempo - inicio_tiempo)

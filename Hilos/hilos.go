@@ -29,22 +29,7 @@ func main() {
     inicio := time.Now()
 
     wg.Add(1)
-    go numeros_primos(1, 16667, &wg)
-    
-    wg.Add(1)
-    go numeros_primos(16667, 33334, &wg)
-    
-    wg.Add(1)
-    go numeros_primos(33334, 50001, &wg)
-    
-    wg.Add(1)
-    go numeros_primos(50001, 66668, &wg)
-    
-    wg.Add(1)
-    go numeros_primos(66668, 83335, &wg)
-    
-    wg.Add(1)
-    go numeros_primos(83335, 100001, &wg)
+    go numeros_primos(1, 100000, &wg)
 
     wg.Wait()
     fin := time.Now()
